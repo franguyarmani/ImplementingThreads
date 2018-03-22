@@ -27,8 +27,7 @@ public class Searcher implements Runnable
     		String w = sb.toString();
 
     		if (searchterms.contains(w)) {
-    			//System.out.println(w);
-    			result.add(new Match(w, false, i+yoffset, xoffset));
+    			result.add(new Match(w, false, xoffset, i+yoffset));
     		}
         }
     	for (int i = 0; i < 5; i++) { //Vertical		i is the location in horizontal space or the column index or x
@@ -39,7 +38,6 @@ public class Searcher implements Runnable
     		String w = sb.toString();
 
     		if (searchterms.contains(w)) {
-    			System.out.println(w);
     			result.add(new Match(w, true, i+xoffset, yoffset));
     		}
         }
